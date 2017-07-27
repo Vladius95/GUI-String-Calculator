@@ -67,7 +67,7 @@ class Application:
 
 		def bind_commands(self, cms, key='Key', params=None):
 			assert key is not str, '"key" must be string type'
-			self._enter.bind('<{}>'.format(key), lambda event: lambda: cms() if params is None else cms(*params))
+			self._enter.bind('<{}>'.format(key), lambda event: cms() if params is None else cms(*params))
 
 	class FieldLabel:
 		def __init__(self, root, width, height, label='label'):

@@ -86,8 +86,9 @@ def main():
 	commands_ans = lambda : (input_.add_text(f.ans), btns.turn_on_buttons(btn_del)) 
 	btn_ans = btns.create_button(text_button='Ans', x=130, y=205, width_button=1, enabled=tk.DISABLED, cms=commands_ans)
 	#////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	input_commands = lambda : btns.turn_off_buttons(btn_clr, btn_del, btn_calc) if len(input_.get_text()) == 0 else btns.turn_on_buttons(btn_clr, btn_del, btn_calc)
-	input_.bind_commands(input_commands)
+
+	input_command = lambda : btns.turn_on_buttons(btn_clr, btn_del, btn_calc)
+	input_.bind_commands(input_command)
 
 	main_commands = commands_calc
 	main.bind_commands(main_commands, 'Return')
